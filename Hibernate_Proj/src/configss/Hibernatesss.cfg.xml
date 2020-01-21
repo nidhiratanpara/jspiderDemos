@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+<!-- Database propertys -->
+<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+<property name="connection.url">jdbc:mysql://127.0.0.1:3306/oehm11</property>
+<property name="connection.user">root</property>
+<property name="connection.password">root</property>
+
+<!-- Hibernate propertys -->
+<property name="show_sql">true</property>
+<property name="hibernate.hbm2ddl.auto">create</property> 
+
+
+<mapping class="com.demos.hibernate.HotelDTO"/>
+<mapping class="com.demos.hibernate.BookDTO"/>
+<mapping class="com.demo.curdoperations.CustomerDTO"/>
+
+<mapping class="com.demo.Ormprobs.PrincipalDTO"/>
+<mapping class="com.demo.Ormprobs.CollegeDTO"/>
+
+<mapping class="com.demo.Ormprobs1.ManagerDTO"/>
+<mapping class="com.demo.Ormprobs1.RestrurentDTO"/>
+
+<mapping class="com.demo.Orm1to2.CompanyDTO"/>
+<mapping class="com.demo.Orm1to2.EmployeeDTO"/>
+
+
+<mapping class="com.demos.One2One.MobileDTO"/>
+<mapping class="com.demos.One2One.BatteryDTO"/>
+</session-factory>
+</hibernate-configuration>

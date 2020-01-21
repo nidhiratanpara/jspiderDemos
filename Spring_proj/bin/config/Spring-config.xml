@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean id="person" class="com.demo.First.PresonBean">
+<property name="name" value="rohit"></property>
+<property name="dob" value="22/10/93"></property>
+<property name="gender" value="male"></property>
+<property name="address" value="pune"></property>
+</bean>
+
+<bean id="p" class="com.demo.First.PresonBean">
+<property name="name" value="nidhi"></property>
+<property name="dob" value="213/10/93"></property>
+<property name="gender" value="female"></property>
+<property name="address" value="mumbai"></property>
+</bean>
+
+ <bean id="pc" class="com.demo.usingconstructor.PersonBeans">
+<constructor-arg index="2" value="male"></constructor-arg>
+<constructor-arg index="3" value="ranchi"></constructor-arg>
+<constructor-arg index="4" value="30"></constructor-arg>
+<constructor-arg index="0" value="dhoni"></constructor-arg>
+<constructor-arg index="1" value="30/2/88"></constructor-arg>
+<constructor-arg index="5" value="5.9"></constructor-arg>
+</bean>
+
+<bean id="pupil" scope="prototype" class="com.demo.scopeproperty.PersonBeans">
+<constructor-arg index="2" value="male"></constructor-arg>
+<constructor-arg index="3" value="ranchi"></constructor-arg>
+<constructor-arg index="4" value="30"></constructor-arg>
+<constructor-arg index="0" value="dhoni"></constructor-arg>
+<constructor-arg index="1" value="30/2/88"></constructor-arg>
+<constructor-arg index="5" value="5.9"></constructor-arg>
+</bean>
+
+<bean id="s" class="com.demo.dependencyinjectionex.SimCardBean">
+<property name="simno" value="365215"></property>
+<property name="operator" value="vodaphone"></property>
+<property name="simtype" value="micro"></property>
+</bean>
+
+<bean id="phone" class="com.demo.dependencyinjectionex.PhoneBean">
+<property name="imei" value="2361589"></property>
+<property name="company" value="redmi"></property>
+<property name="model" value="4i"></property>
+<property name="sim" ref="s"></property>
+</bean>
+ 
+<!-- forbyType <bean  class="com.demo.autowireproperty.FualBean"> -->
+<!-- forbyName -->
+ <bean id="fual" class="com.demo.autowireproperty.FualBean">
+ <property name="type" value="highpower"></property>
+ <property name="prise" value="79.55"></property>
+ </bean>
+ 
+ <!--default its follow no <bean id="bike" class="com.demo.autowireproperty.BikeBean"> -->
+<!-- <bean id="bike" autowire="byName" class="com.demo.autowireproperty.BikeBean"> -->
+<!-- <bean id="bike" autowire="byType" class="com.demo.autowireproperty.BikeBean"> -->
+<bean id="bike" autowire="constructor" class="com.demo.autowireproperty.BikeBean">
+<property name="bikeno" value="mh-2235"></property>
+<property name="bikename" value="activa"></property>
+<property name="modelno" value="6987"></property>
+<property name="color" value="black"></property>
+<!--its default<property name="fual" ref="fual"></property>-->
+</bean>
+
+</beans>
